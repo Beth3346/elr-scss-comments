@@ -1,0 +1,138 @@
+@import 'node_modules/elr-scss-functions/main';
+
+@mixin elr-thumbnail($config: ()) {
+  $config: extend(
+    (
+      width: 100px,
+      height: 100px,
+      border-radius: 0
+    ),
+    $config
+  );
+
+  $width: map-get($config, width);
+  $height: map-get($config, height);
+  $border-radius: map-get($config, border-radius);
+
+  @if ($border-radius == 'round') {
+    border-radius: ($width / 2);
+  } @else {
+    border-radius: $border-radius;
+  }
+
+  overflow: hidden;
+  border: 3px solid #fff;
+  box-shadow: #999 0 0 0 1px;
+  width: $width;
+  height: $height;
+  display: block;
+  text-align: center;
+  position: relative;
+
+  img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: auto;
+  }
+}
+
+@mixin elr-comments($config: ()) {
+  $config: extend(
+    (
+      background-color: transparent
+    ),
+    $config
+  );
+
+  $background-color: map-get($config, background-color);
+
+  max-width: 700px;
+
+  .example-subheading {
+    margin-bottom: 20px;
+  }
+
+  .comment {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+
+    @if ($background-color != transparent) {
+      background-color: $background-color;
+      border-radius: 5px;
+      padding: 20px;
+    }
+  }
+
+  .comment-nested {
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  p {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .avatar {
+    @include elr-thumbnail(
+      $config: (
+        width: 50px,
+        height: 50px,
+        border-radius: 3px
+      )
+    );
+    margin-right: 20px;
+  }
+
+  .comment-content {
+    max-width: 630px - 40;
+  }
+
+  .comment-heading {
+    padding-bottom: 5px;
+    display: flex;
+  }
+
+  .comment-author {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    padding: 0;
+    margin: 0 10px 0 0;
+  }
+
+  .comment-timestamp {
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    padding: 0;
+    margin: 0;
+  }
+
+  .comment-reply {
+    font-size: 12px;
+    text-decoration: none;
+    color: blue;
+  }
+
+  .comment-reply-form {
+    width: 100%;
+
+    [type='submit'] {
+      background-color: #333;
+      border: 1px solid #333;
+
+      &:hover {
+        background-color: lighten(#333, 10%);
+        border-color: lighten(#333, 10%);
+      }
+    }
+  }
+}
