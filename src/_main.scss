@@ -41,33 +41,23 @@
 @mixin elr-comments($config: ()) {
   $config: extend(
     (
-      background-color: transparent
+      link-color: #1976d2
     ),
     $config
   );
 
-  $background-color: map-get($config, background-color);
+  $link-color: map-get($config, link-color);
 
   max-width: 700px;
 
-  .example-subheading {
-    margin-bottom: 20px;
-  }
-
-  .comment {
+  .elr-comment {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 20px;
-
-    @if ($background-color != transparent) {
-      background-color: $background-color;
-      border-radius: 5px;
-      padding: 20px;
-    }
   }
 
-  .comment-nested {
+  .elr-comment-nested {
     padding-left: 30px;
     padding-top: 10px;
     padding-bottom: 0;
@@ -80,7 +70,7 @@
     padding: 0;
   }
 
-  .avatar {
+  .elr-comment-avatar {
     @include elr-thumbnail(
       $config: (
         width: 50px,
@@ -91,16 +81,16 @@
     margin-right: 20px;
   }
 
-  .comment-content {
+  .elr-comment-content {
     max-width: 630px - 40;
   }
 
-  .comment-heading {
+  .elr-comment-heading {
     padding-bottom: 5px;
     display: flex;
   }
 
-  .comment-author {
+  .elr-comment-author {
     font-size: 16px;
     font-weight: 700;
     color: #333;
@@ -108,7 +98,7 @@
     margin: 0 10px 0 0;
   }
 
-  .comment-timestamp {
+  .elr-comment-timestamp {
     font-size: 14px;
     font-weight: 500;
     color: #666;
@@ -116,23 +106,25 @@
     margin: 0;
   }
 
-  .comment-reply {
+  .elr-comment-reply {
     font-size: 12px;
     text-decoration: none;
-    color: blue;
+    color: $link-color;
+    margin: 0;
+    padding: 0;
   }
 
-  .comment-reply-form {
-    width: 100%;
+  // .elr-comment-reply-form {
+  //   width: 100%;
 
-    [type='submit'] {
-      background-color: #333;
-      border: 1px solid #333;
+  //   [type='submit'] {
+  //     background-color: #333;
+  //     border: 1px solid #333;
 
-      &:hover {
-        background-color: lighten(#333, 10%);
-        border-color: lighten(#333, 10%);
-      }
-    }
-  }
+  //     &:hover {
+  //       background-color: lighten(#333, 10%);
+  //       border-color: lighten(#333, 10%);
+  //     }
+  //   }
+  // }
 }
