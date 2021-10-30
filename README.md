@@ -1,6 +1,5 @@
 # elr-scss-comment
 
-[![Build Status](https://travis-ci.com/Beth3346/elr-scss-comments.svg?branch=master)](https://travis-ci.com/Beth3346/elr-scss-comments)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![npm](https://img.shields.io/npm/dm/elr-scss-comment.svg?style=flat)](https://www.npmjs.com/package/elr-scss-comment)
 
@@ -16,7 +15,7 @@ yarn add elr-scss-comment
 ```
 
 ```scss
-@import '~elr-scss-comment';
+@import "~elr-scss-comment";
 
 .elr-comments {
   @include elr-comments;
@@ -49,9 +48,7 @@ yarn add elr-scss-comment
           <p class="elr-comment-timestamp">Just Now</p>
         </div>
         <div class="elr-comment-body">
-          <p>
-            Yes! this site always has the best articles.
-          </p>
+          <p>Yes! this site always has the best articles.</p>
           <a class="elr-comment-reply" href="#">Reply</a>
         </div>
       </div>
