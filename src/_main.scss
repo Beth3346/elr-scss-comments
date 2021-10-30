@@ -1,11 +1,11 @@
-@import 'node_modules/elr-scss-functions/main';
+@import "node_modules/elr-scss-functions/src/main";
 
 @mixin elr-thumbnail($config: ()) {
   $config: extend(
     (
       width: 100px,
       height: 100px,
-      border-radius: 0
+      border-radius: 0,
     ),
     $config
   );
@@ -14,7 +14,7 @@
   $height: map-get($config, height);
   $border-radius: map-get($config, border-radius);
 
-  @if ($border-radius == 'round') {
+  @if ($border-radius == "round") {
     border-radius: ($width / 2);
   } @else {
     border-radius: $border-radius;
@@ -41,7 +41,7 @@
 @mixin elr-comments($config: ()) {
   $config: extend(
     (
-      link-color: #1976d2
+      link-color: #1976d2,
     ),
     $config
   );
@@ -75,7 +75,7 @@
       $config: (
         width: 50px,
         height: 50px,
-        border-radius: 3px
+        border-radius: 3px,
       )
     );
     margin-right: 20px;
