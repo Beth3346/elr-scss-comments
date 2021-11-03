@@ -1,7 +1,7 @@
 {
   "name": "elr-scss-comment",
   "description": "a scss mixin for comments",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "author": "Elizabeth Rogers",
   "bugs": {
     "url": "https://github.com/Beth3346/elr-scss-comments",
@@ -13,7 +13,7 @@
     "test": "gulp clean && gulp && gulp clean",
     "update": "ncu",
     "update:install": "ncu -u && npm install",
-    "publish": "np"
+    "pub": "np"
   },
   "devDependencies": {
     "del": "^6.0.0",
