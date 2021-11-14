@@ -15,7 +15,7 @@ yarn add elr-scss-comment
 ```
 
 ```scss
-@import "~elr-scss-comment";
+@import "elr-scss-comment/src/main";
 
 .elr-comments {
   @include elr-comments;
@@ -25,31 +25,35 @@ yarn add elr-scss-comment
 ```html
 <div class="elr-comments">
   <div class="elr-comment">
-    <figure class="elr-comment-avatar">
-      <img src="/images/avatar5.jpg" />
-    </figure>
     <div class="elr-comment-content">
       <div class="elr-comment-heading">
-        <h3 class="elr-comment-author">Joe</h3>
-        <p class="elr-comment-timestamp">10 minutes ago</p>
+        <figure class="elr-comment-avatar">
+          <img src="https://placekitten.com/200/200" />
+        </figure>
+        <div>
+          <h3 class="elr-comment-author">Joe</h3>
+          <p class="elr-comment-timestamp">10 minutes ago</p>
+        </div>
       </div>
       <div class="elr-comment-body">
         <p>This article is so interesting!</p>
-        <a class="elr-comment-reply" href="#">Reply</a>
+        <button class="elr-comment-reply">Reply</button>
       </div>
     </div>
     <div class="elr-comment elr-comment-nested">
-      <figure class="elr-comment-avatar">
-        <img src="/images/avatar1.jpg" />
-      </figure>
       <div class="elr-comment-content">
         <div class="elr-comment-heading">
-          <h3 class="elr-comment-author">Kate Brewster</h3>
-          <p class="elr-comment-timestamp">Just Now</p>
+          <figure class="elr-comment-avatar">
+            <img src="https://placekitten.com/300/200" />
+          </figure>
+          <div>
+            <h3 class="elr-comment-author">Kate Brewster</h3>
+            <p class="elr-comment-timestamp">Just Now</p>
+          </div>
         </div>
         <div class="elr-comment-body">
           <p>Yes! this site always has the best articles.</p>
-          <a class="elr-comment-reply" href="#">Reply</a>
+          <button class="elr-comment-reply">Reply</button>
         </div>
       </div>
     </div>
