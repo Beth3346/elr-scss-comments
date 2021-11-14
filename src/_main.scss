@@ -3,8 +3,8 @@
 @mixin elr-thumbnail($config: ()) {
   $config: extend(
     (
-      width: 100px,
-      height: 100px,
+      width: 80px,
+      height: 80px,
       border-radius: 0,
     ),
     $config
@@ -21,8 +21,6 @@
   }
 
   overflow: hidden;
-  border: 3px solid #fff;
-  box-shadow: #999 0 0 0 1px;
   width: $width;
   height: $height;
   display: block;
@@ -42,32 +40,52 @@
   $config: extend(
     (
       link-color: #1976d2,
+      color: #111,
+      border-color: #ccc,
     ),
     $config
   );
 
+  $border-color: map-get($config, border-color);
   $link-color: map-get($config, link-color);
+  $color: map-get($config, color);
 
-  max-width: 700px;
+  margin: 16px;
+  border-top: 1px solid $border-color;
 
   .elr-comment {
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
   }
 
-  .elr-comment-nested {
-    padding-left: 30px;
-    padding-top: 10px;
-    padding-bottom: 0;
-    margin-bottom: 0;
+  > .elr-comment {
+    padding: 0 8px 8px;
+    border-bottom: 1px solid $border-color;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  button {
+    font-size: 14px;
+    background-color: $link-color;
+    color: #fff;
+    margin: 8px 0;
+    padding: 4px 8px;
+    border-radius: 3px;
+    border: 0;
+    cursor: pointer;
   }
 
   p {
     font-size: 14px;
-    margin: 0;
+    line-height: 1.5;
+    margin: 4px 0;
     padding: 0;
+  }
+
+  .elr-comment-nested {
+    margin-left: 32px;
+    margin-top: 16px;
+    margin-bottom: 0;
   }
 
   .elr-comment-avatar {
@@ -78,53 +96,59 @@
         border-radius: 3px,
       )
     );
-    margin-right: 20px;
-  }
-
-  .elr-comment-content {
-    max-width: 630px - 40;
+    margin-right: 16px;
   }
 
   .elr-comment-heading {
-    padding-bottom: 5px;
+    padding-bottom: 8px;
     display: flex;
+    align-items: center;
   }
 
   .elr-comment-author {
     font-size: 16px;
     font-weight: 700;
-    color: #333;
+    color: $color;
     padding: 0;
-    margin: 0 10px 0 0;
+    margin: 0 8px 0 0;
   }
 
   .elr-comment-timestamp {
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     color: #666;
     padding: 0;
     margin: 0;
   }
 
-  .elr-comment-reply {
-    font-size: 12px;
-    text-decoration: none;
-    color: $link-color;
-    margin: 0;
-    padding: 0;
+  .elr-comment-reply-form {
+    width: 100%;
+    margin: 16px 0;
+
+    h4 {
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+
+    textarea,
+    input {
+      display: block;
+      width: 100%;
+      margin: 8px 0;
+      padding: 8px;
+      border-radius: 3px;
+    }
+
+    [type="submit"] {
+      display: block;
+      background-color: $link-color;
+      border: 1px solid $link-color;
+      color: #fff;
+
+      &:hover {
+        background-color: lighten($link-color, 10%);
+        border-color: lighten($link-color, 10%);
+      }
+    }
   }
-
-  // .elr-comment-reply-form {
-  //   width: 100%;
-
-  //   [type='submit'] {
-  //     background-color: #333;
-  //     border: 1px solid #333;
-
-  //     &:hover {
-  //       background-color: lighten(#333, 10%);
-  //       border-color: lighten(#333, 10%);
-  //     }
-  //   }
-  // }
 }
