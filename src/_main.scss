@@ -1,11 +1,12 @@
 @import "elr-scss-functions/src/main";
+@import "elr-scss-config/src/main";
 
 @mixin elr-thumbnail($config: ()) {
   $config: extend(
     (
       width: 80px,
       height: 80px,
-      border-radius: 0,
+      border-radius: $border-radius,
     ),
     $config
   );
@@ -39,9 +40,9 @@
 @mixin elr-comments($config: ()) {
   $config: extend(
     (
-      link-color: #1976d2,
-      color: #111,
-      border-color: #ccc,
+      link-color: $primary-color,
+      color: $text-color,
+      border-color: $light-gray,
     ),
     $config
   );
@@ -49,9 +50,10 @@
   $border-color: map-get($config, border-color);
   $link-color: map-get($config, link-color);
   $color: map-get($config, color);
+  $border: 1px solid $border-color;
 
-  margin: 16px;
-  border-top: 1px solid $border-color;
+  margin: $base-fontsize;
+  border-top: $border;
 
   .elr-comment {
     width: 100%;
@@ -59,15 +61,15 @@
 
   > .elr-comment {
     padding: 0 8px 8px;
-    border-bottom: 1px solid $border-color;
-    margin-top: 16px;
-    margin-bottom: 16px;
+    border-bottom: $border;
+    margin-top: $base-fontsize;
+    margin-bottom: $base-fontsize;
   }
 
   button {
     font-size: 14px;
     background-color: $link-color;
-    color: #fff;
+    color: $white;
     margin: 8px 0;
     padding: 4px 8px;
     border-radius: 3px;
@@ -84,7 +86,7 @@
 
   .elr-comment-nested {
     margin-left: 32px;
-    margin-top: 16px;
+    margin-top: $base-fontsize;
     margin-bottom: 0;
   }
 
@@ -96,7 +98,7 @@
         border-radius: 3px,
       )
     );
-    margin-right: 16px;
+    margin-right: $base-fontsize;
   }
 
   .elr-comment-heading {
@@ -106,7 +108,7 @@
   }
 
   .elr-comment-author {
-    font-size: 16px;
+    font-size: $base-fontsize;
     font-weight: 700;
     color: $color;
     padding: 0;
@@ -116,18 +118,18 @@
   .elr-comment-timestamp {
     font-size: 14px;
     font-weight: 400;
-    color: #666;
+    color: $dark-gray;
     padding: 0;
     margin: 0;
   }
 
   .elr-comment-reply-form {
     width: 100%;
-    margin: 16px 0;
+    margin: $base-fontsize 0;
 
     h4 {
       font-size: 18px;
-      margin-bottom: 16px;
+      margin-bottom: $base-fontsize;
     }
 
     textarea,
@@ -136,14 +138,14 @@
       width: 100%;
       margin: 8px 0;
       padding: 8px;
-      border-radius: 3px;
+      border-radius: $border-radius;
     }
 
     [type="submit"] {
       display: block;
       background-color: $link-color;
       border: 1px solid $link-color;
-      color: #fff;
+      color: $white;
 
       &:hover {
         background-color: lighten($link-color, 10%);
