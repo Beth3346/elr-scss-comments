@@ -16,7 +16,7 @@
   $border-radius: map-get($config, border-radius);
 
   @if ($border-radius == "round") {
-    border-radius: ($width / 2);
+    border-radius: $width * 0.5;
   } @else {
     border-radius: $border-radius;
   }
@@ -55,90 +55,98 @@
   margin: $base-fontsize;
   border-top: $border;
 
-  .elr-comment {
+  .comment {
     width: 100%;
   }
 
-  > .elr-comment {
-    padding: 0 8px 8px;
+  > .comment {
+    padding: 0 ($base-fontsize * 0.5) ($base-fontsize * 0.5);
     border-bottom: $border;
     margin-top: $base-fontsize;
     margin-bottom: $base-fontsize;
   }
 
   button {
-    font-size: 14px;
+    font-size: $base-fontsize * 0.875;
     background-color: $link-color;
     color: $white;
-    margin: 8px 0;
-    padding: 4px 8px;
-    border-radius: 3px;
+    margin: ($base-fontsize * 0.5) 0;
+    padding: ($base-fontsize * 0.25) ($base-fontsize * 0.5);
+    border-radius: $border-radius;
     border: 0;
     cursor: pointer;
   }
 
   p {
-    font-size: 14px;
+    font-size: $base-fontsize * 0.875;
     line-height: 1.5;
-    margin: 4px 0;
+    margin: ($base-fontsize * 0.25) 0;
     padding: 0;
   }
 
-  .elr-comment-nested {
-    margin-left: 32px;
+  .comment-nested {
+    margin-left: $base-fontsize * 2;
     margin-top: $base-fontsize;
     margin-bottom: 0;
   }
 
-  .elr-comment-avatar {
+  .comment-avatar {
     @include elr-thumbnail(
       $config: (
         width: 50px,
         height: 50px,
-        border-radius: 3px,
+        border-radius: $border-radius,
       )
     );
     margin-right: $base-fontsize;
   }
 
-  .elr-comment-heading {
-    padding-bottom: 8px;
+  .comment-heading {
+    padding-bottom: ($base-fontsize * 0.5);
     display: flex;
     align-items: center;
   }
 
-  .elr-comment-author {
+  .comment-author {
     font-size: $base-fontsize;
     font-weight: 700;
     color: $color;
     padding: 0;
-    margin: 0 8px 0 0;
+    margin: 0 ($base-fontsize * 0.5) 0 0;
   }
 
-  .elr-comment-timestamp {
-    font-size: 14px;
+  .comment-timestamp {
+    font-size: $base-fontsize * 0.875;
     font-weight: 400;
     color: $dark-gray;
     padding: 0;
     margin: 0;
   }
 
-  .elr-comment-reply-form {
+  .comment-reply-form {
     width: 100%;
     margin: $base-fontsize 0;
 
     h4 {
-      font-size: 18px;
+      font-size: $base-fontsize;
       margin-bottom: $base-fontsize;
+    }
+
+    label {
+      font-size: $base-fontsize * 0.875;
     }
 
     textarea,
     input {
       display: block;
       width: 100%;
-      margin: 8px 0;
-      padding: 8px;
+      margin: ($base-fontsize * 0.5) 0;
+      padding: ($base-fontsize * 0.5);
       border-radius: $border-radius;
+    }
+
+    .button-holder {
+      margin-top: $base-fontsize * 1.5;
     }
 
     [type="submit"] {

@@ -11,8 +11,17 @@ Download node at [nodejs.org](http://nodejs.org) and install it, if you haven't 
 
 ```sh
 npm install elr-scss-comment --save
+```
+
+or
+
+```sh
 yarn add elr-scss-comment
 ```
+
+## Implementation
+
+### Scss
 
 ```scss
 @import "elr-scss-comment/src/main";
@@ -21,6 +30,8 @@ yarn add elr-scss-comment
   @include elr-comments;
 }
 ```
+
+### HTML
 
 ```html
 <div class="elr-comments">
