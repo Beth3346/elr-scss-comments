@@ -124,12 +124,26 @@
   }
 
   .comment-reply-form {
-    width: 100%;
+    width: 80%;
     margin: $base-fontsize 0;
+    max-height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+    &.active {
+      max-height: 500px;
+      visibility: visible;
+      opacity: 1;
+    }
 
     h4 {
       font-size: $base-fontsize;
       margin-bottom: $base-fontsize;
+    }
+
+    > div {
+      margin: $base-fontsize 0;
     }
 
     label {
@@ -140,8 +154,9 @@
     input {
       display: block;
       width: 100%;
+      min-height: 40px;
       margin: ($base-fontsize * 0.5) 0;
-      padding: ($base-fontsize * 0.5);
+      padding: ($base-fontsize * 0.75);
       border-radius: $border-radius;
     }
 
