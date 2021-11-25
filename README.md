@@ -26,7 +26,7 @@ yarn add elr-scss-comment
 ```scss
 @import "elr-scss-comment/src/main";
 
-.elr-comments {
+.comments {
   @include elr-comments;
 }
 ```
@@ -34,37 +34,37 @@ yarn add elr-scss-comment
 ### HTML
 
 ```html
-<div class="elr-comments">
-  <div class="elr-comment">
-    <div class="elr-comment-content">
-      <div class="elr-comment-heading">
-        <figure class="elr-comment-avatar">
+<div class="comments">
+  <div class="comment">
+    <div class="comment-content">
+      <div class="comment-heading">
+        <figure class="comment-avatar">
           <img src="https://placekitten.com/200/200" />
         </figure>
         <div>
-          <h3 class="elr-comment-author">Joe</h3>
-          <p class="elr-comment-timestamp">10 minutes ago</p>
+          <h3 class="comment-author">Joe</h3>
+          <p class="comment-timestamp">10 minutes ago</p>
         </div>
       </div>
-      <div class="elr-comment-body">
+      <div class="comment-body">
         <p>This article is so interesting!</p>
-        <button class="elr-comment-reply">Reply</button>
+        <button class="comment-reply">Reply</button>
       </div>
     </div>
-    <div class="elr-comment elr-comment-nested">
-      <div class="elr-comment-content">
-        <div class="elr-comment-heading">
-          <figure class="elr-comment-avatar">
+    <div class="comment comment-nested">
+      <div class="comment-content">
+        <div class="comment-heading">
+          <figure class="comment-avatar">
             <img src="https://placekitten.com/300/200" />
           </figure>
           <div>
-            <h3 class="elr-comment-author">Kate Brewster</h3>
-            <p class="elr-comment-timestamp">Just Now</p>
+            <h3 class="comment-author">Kate Brewster</h3>
+            <p class="comment-timestamp">Just Now</p>
           </div>
         </div>
-        <div class="elr-comment-body">
+        <div class="comment-body">
           <p>Yes! this site always has the best articles.</p>
-          <button class="elr-comment-reply">Reply</button>
+          <button class="comment-reply">Reply</button>
         </div>
       </div>
     </div>
