@@ -68,13 +68,9 @@
 
   button {
     font-size: $base-fontsize * 0.875;
-    background-color: $link-color;
-    color: $white;
+    font-weight: 900;
     margin: ($base-fontsize * 0.5) 0;
     padding: ($base-fontsize * 0.25) ($base-fontsize * 0.5);
-    border-radius: $border-radius;
-    border: 0;
-    cursor: pointer;
   }
 
   p {
