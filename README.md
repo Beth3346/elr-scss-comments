@@ -1,5 +1,7 @@
-# elr-scss-comment
+# Comments
 
+[![npm version](http://img.shields.io/npm/v/elr-scss-comment.svg)](https://www.npmjs.org/package/elr-scss-comment)
+[![Build Status](https://github.com/elr-scss-comment/workflows/CI/badge.svg)](https://github.com/elr-scss-comment/actions?workflow=CI)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![npm](https://img.shields.io/npm/dm/elr-scss-comment.svg?style=flat)](https://www.npmjs.com/package/elr-scss-comment)
 
