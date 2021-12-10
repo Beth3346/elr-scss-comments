@@ -3,9 +3,12 @@
 [![npm version](http://img.shields.io/npm/v/elr-scss-comment.svg)](https://www.npmjs.org/package/elr-scss-comment)
 [![CI](https://github.com/Beth3346/elr-scss-comment/actions/workflows/node.js.yml/badge.svg)](https://github.com/Beth3346/elr-scss-comment/actions/workflows/node.js.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![last commit](https://img.shields.io/github/last-commit/Beth3346/elr-scss-comment.svg)](https://github.com/Beth3346/elr-scss-comment)
 [![npm](https://img.shields.io/npm/dm/elr-scss-comment.svg?style=flat)](https://www.npmjs.com/package/elr-scss-comment)
 
 a library of sass mixins
+
+<!-- [View Demo](https://elr-comment.netlify.app/) -->
 
 ## Installation
 
